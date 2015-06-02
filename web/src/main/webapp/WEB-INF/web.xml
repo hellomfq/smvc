@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <display-name>1</display-name>
+    <description>1</description>
+
+    <!-- start  the welcome file list -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.do</welcome-file>
+    </welcome-file-list>
+    <!-- end  the welcome file list -->
+
+    <!-- start the location mapping of the HTTP error code
+    <error-page>
+        <error-code>500</error-code>
+        <location>/404.html</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.html</location>
+    </error-page> -->
+    <!-- end the location mapping of the HTTP error code -->
+
+    <!-- start the exception location for java.lang.Exception  -->
+    <!--
+   <error-page>
+       <exception-type>java.lang.Exception</exception-type>
+       <location>/error.html</location>
+   </error-page>
+-->
+    <!-- end the exception location for java.lang.Exception  -->
+
+    <!-- start context's parameters define-->
+    <!--<context-param>-->
+        <!--<description>application context for spring</description>-->
+        <!--<param-name>contextConfigLocation</param-name>-->
+        <!--<param-value>classpath*:/dataSource-mysql.xml-->
+            <!--,classpath*:/spring-cache.xml-->
+        <!--</param-value>-->
+    <!--</context-param>-->
+
+    <!--<security-constraint>-->
+        <!--&lt;!&ndash; Authorization setting for SSL &ndash;&gt;-->
+        <!--<web-resource-collection >-->
+            <!--<web-resource-name >SSL</web-resource-name>-->
+            <!--<url-pattern>/supervisor/*</url-pattern>-->
+        <!--</web-resource-collection>-->
+        <!--<user-data-constraint>-->
+            <!--<transport-guarantee>CONFIDENTIAL</transport-guarantee>-->
+        <!--</user-data-constraint>-->
+    <!--</security-constraint>-->
+
+    <!-- start listener define-->
+    <!-- spring's application context load listener -->
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+    <!--</listener>-->
+    <!-- Spring's Introspector 防止内存泄露 -->
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>-->
+    <!--</listener>-->
+
+
+    <!-- end listerner define -->
+
+    <!--&lt;!&ndash; surpport bean scope:request,session globalsession&ndash;&gt;-->
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>-->
+    <!--</listener>-->
+
+    <!-- start filter define-->
+    <!-- start charactor encoding filter -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- end charactor encoding filter -->
+
+
+</web-app>
