@@ -14,7 +14,9 @@
 
     <properties>
         <!-- 主要依赖库的版本定义 -->
-        <spring.version>4.1.6.RELEASE</spring.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <springversion>4.1.6.RELEASE</springversion>
+        <junitversion>3.8.1</junitversion>
     </properties>
 
 
