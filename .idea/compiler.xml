@@ -28,6 +28,7 @@
     <bytecodeTargetLevel>
       <module name="dev" target="1.5" />
       <module name="parent" target="1.5" />
+      <module name="smvc" target="1.5" />
       <module name="web" target="1.5" />
     </bytecodeTargetLevel>
   </component>
